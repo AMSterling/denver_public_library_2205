@@ -2,25 +2,25 @@ require './lib/library'
 require_relative '../lib/author'
 
 RSpec.describe Library do
-  xit "exists" do
+  it "exists" do
     dpl = Library.new("Denver Public Library")
 
     expect(dpl).to be_instance_of Library
   end
 
-  xit "has a name" do
+  it "has a name" do
     dpl = Library.new("Denver Public Library")
 
     expect(dpl.name).to eq("Denver Public Library")
   end
 
-  xit "stores an array of books" do
+  it "stores an array of books" do
     dpl = Library.new("Denver Public Library")
 
     expect(dpl.books).to eq([])
   end
 
-  xit "stores an array of authors" do
+  it "stores an array of authors" do
     dpl = Library.new("Denver Public Library")
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
     harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
@@ -33,7 +33,7 @@ RSpec.describe Library do
     expect(dpl.authors).to eq([charlotte_bronte, harper_lee])
   end
 
-  xit "stores a collection of books" do
+  it "stores a collection of books" do
     dpl = Library.new("Denver Public Library")
 
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})

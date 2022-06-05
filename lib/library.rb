@@ -6,8 +6,8 @@ class Library
     @books = []
     @authors = []
   end
-
   def add_author(author)
     @authors << author
   end
+  require "pry"; binding.pry
 end

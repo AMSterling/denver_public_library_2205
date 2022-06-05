@@ -1,5 +1,5 @@
 class Author
-  attr_accessor :first_name,
+  attr_reader :first_name,
                 :last_name,
                 :books
 
@@ -13,7 +13,11 @@ class Author
   end
 
   def write(title, date)
-    @books.push(@name, title, date)
-    require "pry"; binding.pry
+    new_book = Book.new({
+      author_first_name: @name.split.first, author_last_name: @name.split.last,
+      title: title,
+      publication_date: date})
+      @books << new_book
+      new_book
   end
 end
